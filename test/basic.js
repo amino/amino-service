@@ -1,23 +1,30 @@
 describe('basic test', function () {
+  var service, service2;
   it('attaches', function () {
     assert.equal(typeof amino.request, 'function');
   });
-  var server, service;
   it('sets up a service', function (done) {
-    server = http.createServer(function (req, res) {
-      res.end('cool stuff');
-    });
-    service = amino.createService('cool-stuff@0.1.0', server);
-    server.on('listening', function () {
-      assert.equal(typeof service.spec.port, 'number');
-      done();
-    });
+    service = createTestService('cool-stuff', 'cool stuff', done);
   });
   it('can request the service', function (done) {
-    amino.request('cool-stuff@0.1.x', '/', function (err, res, body) {
+    amino.request('cool-stuff', '/', function (err, res, body) {
       assert.ifError(err);
       assert.equal(body, 'cool stuff');
       done();
     });
+  });
+  it('can close the service', function (done) {
+    service.once('close', done);
+    service.close();
+  });
+  it('times out until service restored', function (done) {
+    amino.request('cool-stuff', '/', function (err, res, body) {
+      assert.ifError(err);
+      assert.equal(body, 'really cool stuff');
+      done();
+    });
+    setTimeout(function () {
+      service2 = createTestService('cool-stuff', 'really cool stuff');
+    }, 1000);
   });
 });

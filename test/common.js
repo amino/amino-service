@@ -5,3 +5,5 @@ amino = require('amino')
 http = require('http');
 
 assert = require('assert');
+
+createTestService = require('./helpers/createTestService');
