@@ -1,13 +1,5 @@
-var amino = require('amino')
-  , assert = require('assert')
-  , http = require('http')
-
 describe('basic test', function () {
   it('attaches', function () {
-    amino
-      .use(require('../'))
-      .init({service: false});
-
     assert.equal(typeof amino.request, 'function');
   });
   var server, service;
