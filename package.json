@@ -6,12 +6,9 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {
-    "amino-spec": "~0.0.0"
-  },
   "devDependencies": {
     "mocha": "*",
-    "amino": "~1.0.0"
+    "amino": "~1.1.0"
   },
   "scripts": {
     "test": "make test"
