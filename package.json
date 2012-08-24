@@ -1,6 +1,6 @@
 {
   "name": "amino-service",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Decentralized service registry plugin for amino 1.x",
   "main": "index.js",
   "directories": {
@@ -20,6 +20,20 @@
     "type": "git",
     "url": "git://github.com/amino/amino-service.git"
   },
-  "author": "Carlos Rodriguez",
+  "homepage": "https://github.com/amino/amino",
+  "keywords": [
+    "load-balancing",
+    "failover",
+    "cluster",
+    "scalability",
+    "performance",
+    "service",
+    "pub/sub",
+    "high-availability",
+    "cloud",
+    "redundancy",
+    "ipc"
+  ],
+  "author": "Carlos Rodriguez <carlos@s8f.org> (http://s8f.org/)",
   "license": "MIT"
 }
