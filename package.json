@@ -1,6 +1,6 @@
 {
   "name": "amino-service",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Decentralized service registry plugin for amino 1.x",
   "main": "index.js",
   "directories": {
